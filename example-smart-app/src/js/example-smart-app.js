@@ -63,10 +63,10 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
-          p.weight = weight[0];
-          p.weightEst = weightEst[0];
-          p.weightMea = weightMea[0];
-          p.weightSta = weightSta[0];
+          p.weight = getQuantityValueAndUnit(weight[0]);
+          p.weightEst = getQuantityValueAndUnit(weightEst[0]);
+          p.weightMea = getQuantityValueAndUnit(weightMea[0]);
+          p.weightSta = getQuantityValueAndUnit(weightSta[0]);
           p.temp = getQuantityValueAndUnit(temp[0]);
           p.hrate = getQuantityValueAndUnit(hrate[0]);
 
