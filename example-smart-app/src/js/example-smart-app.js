@@ -18,6 +18,8 @@
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
                               'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
+                              'http://loinc.org|3141-9', 'http://loinc.org|3142-7',
+                              'http://loinc.org|8335-2', 'http://loinc.org|8310-5',
                               'http://loinc.org|29463-7', 'http://loinc.org|8867-4']
                       }
                     }
@@ -48,6 +50,10 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var weight = byCodes('29463-7');
+          var weightEst = byCodes('8335-2');
+          var weightMea = byCodes('3141-9');
+          var weightSta = byCodes('3142-7');
+          var temp = byCodes('8310-5');
           var hrate = byCodes('8867-4');
 
           var p = defaultPatient();
@@ -58,6 +64,10 @@
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
           p.weight = weight[0];
+          p.weightEst = weightEst[0];
+          p.weightMea = weightMea[0];
+          p.weightSta = weightSta[0];
+          p.temp = getQuantityValueAndUnit(temp[0]);
           p.hrate = getQuantityValueAndUnit(hrate[0]);
 
           if (typeof systolicbp != 'undefined')  {
@@ -96,6 +106,10 @@
       ldl: {value: ''},
       hdl: {value: ''},
       weight: {value: ''},
+      weightEst: {value: ''},
+      weightMea: {value: ''},
+      weightSta: {value: ''},
+      temp: {value: ''},
       hrate: {value: ''}
     };
   }
